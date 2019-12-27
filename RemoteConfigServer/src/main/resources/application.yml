@@ -1,0 +1,28 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: RemoteConfigServer
+  cloud:
+    config:
+      server:
+        git:
+#          设置Git仓库地址，公开仓库使用HTTPS URI不需要用户名密码
+          uri: https://github.com/Dlalran/SpringCloudDemo.git
+#          强制拉取
+#          force-pull: true
+#          仓库检索配置文件的路径
+          search-paths: config
+#          公开仓库不需要配置用户名和密码名
+#          username:
+#          password:
+#          也可以通过SSH方式登录，换行粘贴SSH私钥 TODO 尝试不成功
+#          private-key: |
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true

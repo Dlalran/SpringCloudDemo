@@ -12,8 +12,10 @@
         <module name="ZuulGateway" />
         <module name="EurekaProvider" />
         <module name="ZipkinClient" />
+        <module name="RemoteConfigClient" />
         <module name="EurekaConsumer" />
         <module name="EurekaServer" />
+        <module name="RemoteConfigServer" />
         <module name="Hystrix" />
         <module name="NativeConfigServer" />
         <module name="Feign" />
@@ -32,6 +34,8 @@
       <module name="Hystrix" options="-parameters" />
       <module name="NativeConfigClient" options="-parameters" />
       <module name="NativeConfigServer" options="-parameters" />
+      <module name="RemoteConfigClient" options="-parameters" />
+      <module name="RemoteConfigServer" options="-parameters" />
       <module name="Ribbon" options="-parameters" />
       <module name="ZipkinClient" options="-parameters" />
       <module name="ZipkinServer" options="-parameters" />

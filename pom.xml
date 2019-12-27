@@ -26,6 +26,8 @@
         <module>NativeConfigServer</module>
         <module>NativeConfigClient</module>
         <module>ZipkinClient</module>
+        <module>RemoteConfigClient</module>
+        <module>RemoteConfigServer</module>
     </modules>
 
     <properties>
