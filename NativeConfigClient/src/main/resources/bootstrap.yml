@@ -1,0 +1,25 @@
+#通过Config Server获取本地配置内容，该配置文件必须命名为bootstrap.yml
+
+#运行端口从本地配置获得，不指定
+
+spring:
+  application:
+    name: NativeConfigClient
+#    从Config Server中指定的配置文件目录中(这里是shared)，
+#    获取名字为 应用名(spring.application.name)-使用环境名(profiles-active).yml 的配置文件
+  profiles:
+    active: dev
+  cloud:
+#    配置Config Server的地址
+    config:
+      uri: http://localhost:8762
+#      开启快速失败，检验Config Server是否正常运作，否则立即报错
+      fail-fast: true
+
+#并不需要配置到注册中心，只是为了在注册中心中查看该服务通过Config Server中获得的配置端口号
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true

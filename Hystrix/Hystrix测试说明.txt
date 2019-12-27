@@ -1,0 +1,5 @@
+通过http://localhost:8090/hystrix访问Hystrix Dashboard
+并输入Spring Actuator的数据监控源:http://localhost:8090/actuator/hystrix.stream
+点击Monitor Stream进行可视化监控
+通过SpringMVC调用服务提供方，如：htto://localhost:8090/testHystrix/port
+查看监控台上的数据变化

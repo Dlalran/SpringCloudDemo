@@ -1,0 +1,14 @@
+#远程Config配置，存放在GitHub项目仓库中
+server:
+  port: 8070
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+spring:
+  application:
+    name: ConfigClient

@@ -1,0 +1,2 @@
+SpringBoot 2.0版本之后，官方已不推荐自己搭建Zipkin Server，而是直接提供了编译好的jar包
+直接运行jar包(见ZipkinClient/jar目录中),默认端口是9411(即Zipkin Server URL为: http://localhost:9411/)

@@ -1,0 +1,17 @@
+server:
+  port: 8762
+
+spring:
+  application:
+    name: NativeConfigServer
+#  使用的环境配置
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+#          指定本地配置文件的存放路径
+          search-locations: classpath:/shared
+
+#配置中心不需要在注册中心中注册
