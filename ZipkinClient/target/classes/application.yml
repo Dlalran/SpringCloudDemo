@@ -1,0 +1,27 @@
+server:
+  port: 8091
+
+spring:
+  application:
+    name: ZipkinClient
+#  实际上通过Spring Cloud Sleuth进行服务追踪，再通过Zipkin分布式数据追踪系统进行监控
+  sleuth:
+    web:
+      client:
+#        开启服务追踪
+        enabled: true
+#    设置采样比例，默认为1.0
+#    TODO 据说高版本的Spring Cloud需要用sampler.rate代替sampler.probability来指定采样率，未详细测试
+    sampler:
+      rate: 1
+#      probability: 1.0
+#  Zipkin的URL
+  zipkin:
+    base-url: http://localhost:9411/
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true

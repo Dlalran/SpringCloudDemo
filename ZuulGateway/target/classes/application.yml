@@ -1,0 +1,35 @@
+#Zuul网关的端口
+server:
+  port: 8088
+
+spring:
+  application:
+    name: ZuulGateway
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+#Zuul网关相关配置
+#Zuul自带轮询方式的负载均衡
+zuul:
+#  路由配置(被映射的服务Eureka Server中注册名:映射的路由地址),通过指定的地址(http://网关地址:网关端口/路由地址)来访问指定的服务
+  routes:
+#    简写方式:  服务注册名: 映射地址(当前情况映射地址也可以省略)
+    StudentProvider: /StudentProvider/**
+#    完整形式1(服务注册名转发):  服务注册名:
+#                                   path:映射地址
+#                                   service-id:处理请求的服务注册名
+#    StudentProvider:
+#      path: /StudentProvider/**
+#      service-id: StudentProvider
+#    完整形式2(URL转发):        服务注册名:
+#                                   path:映射地址
+#                                   url:转发的url
+#    StudentProvider:
+#      path: /StudentProvider/**
+#      url: http://localhost:8081
+
