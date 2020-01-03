@@ -1,2 +1,2 @@
 # SpringCloudDemo
-Spring Cloud Learning Demo
+Spring Cloud Netflix Learning Demo
